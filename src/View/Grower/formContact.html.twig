@@ -1,0 +1,110 @@
+<div class="row" id="formGrower">
+    <div class="col mt-5 mb-2">
+        <h2>Ensemble, favorisons l'économie locale</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <p>À l'opposé de la malbouffe, nous donnons priorité aux <strong>produits issus de l'agriculture biologique</strong> et
+            aux <strong>producteurs locaux</strong> dans la philosophie Slow Food.<br/>
+            Grâce à vous, nous favorisons l'économie locale par
+            des <strong>circuits courts</strong> dans un esprit de commerce équitable et de proximité.</p>
+    </div>
+    <div class="col-lg-6 border-left border-secondary">
+        <p><strong>VOUS ÊTES PRODUCTEUR ET VOUS SOUHAITEZ PARTICIPER A CETTE BELLE AVENTURE</strong> ?<br/>
+            Si la réponse est OUI, n'hésitez pas à nous contacter via le formulaire ci-dessous. Nous reviendrons vers vous sous 48h ouvrés.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-sm-12 border pr-lg-2 mx-auto">
+        <form action="/grower" method="POST" >
+            <fieldset>
+                <legend>Veuillez compléter le formulaire. Merci</legend>
+
+                {% if errors.global is defined  %}
+                    <div class="form-group">
+                        <div class="col-12 text-center alert alert-danger" role="alert">
+                            {{ errors.global }}
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if validateForm is not empty  %}
+                    <div class="form-group">
+                        <div class="col-12 text-center alert alert-success" role="alert">
+                            {{ validateForm }}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="form-group row mt-3">
+                    <label for="company" class="col-sm-5 col-form-label">Société / Coopérative</label>
+                    <div class="col-sm-7">
+                        <input type="text" id="company" name="company" class="form-control" value="{{ cleanPost.company ?? '' }}" maxlength="255" placeholder="">
+                        {% if errors.company is defined %}
+                            <p class="text-danger my-0" >{{ errors.company }}</p>
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="name" class="col-sm-5 col-form-label">Nom &amp; Prénom</label>
+                    <div class="col-sm-7">
+                        <input type="text" id="name" name="name" class="form-control" value="{{ cleanPost.name ?? '' }}" maxlength="255" placeholder="">
+                        {% if errors.name is defined %}
+                            <p class="text-danger my-0" >{{ errors.name }}</p>
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="phonenumber" class="col-sm-5 col-form-label">Téléphone</label>
+                    <div class="col-sm-7">
+                        <input type="tel" id="phonenumber" name="phonenumber" class="form-control" value="{{ cleanPost.phonenumber ?? '' }}" maxlength="10" placeholder="ex: 0238252525">
+                        {% if errors.phonenumber is defined %}
+                            <p class="text-danger my-0" >{{ errors.phonenumber }}</p>
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-5 col-form-label">Adresse email</label>
+                    <div class="col-sm-7">
+                        <input type="email" id="email" name="email" class="form-control" value="{{ cleanPost.email ?? '' }}" maxlength="255" placeholder="ex: contact@wanadoo.fr">
+                        {% if errors.email is defined %}
+                            <p class="text-danger my-0" >{{ errors.email }}</p>
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="products" class="col-sm-5 col-form-label">Produit(s) proposé(s)</label>
+                    <div class="col-sm-7">
+                        <input type="text" id="products" name="products" class="form-control" value="{{ cleanPost.products ?? '' }}" maxlength="255" placeholder="ex: légumes, épicerie fine...">
+                        {% if errors.products is defined %}
+                            <p class="text-danger my-0" >{{ errors.products }}</p>
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="message" class="col-sm-5 col-form-label">Message</label>
+                    <div class="col-sm-7">
+                        <textarea name="message" id="message" rows="6" class="form-control">{{ cleanPost.message ?? '' }}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-dark">Envoyer</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <hr>
+    </div>
+</div>

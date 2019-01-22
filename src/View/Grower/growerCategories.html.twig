@@ -1,0 +1,26 @@
+<div id="accordion">
+    {% for growerCategory in growerCategories %}
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ growerCategory.id }}"
+                    aria-expanded="true"
+                    aria-controls="collapseOne">
+                <h2 class="mb-0">
+                    {{ growerCategory.name }}
+                </h2>
+            </button>
+        </div>
+    </div>
+    {% if loop.first %}
+    <div id="collapse{{ growerCategory.id }}" class="collapse show" aria-labelledby="heading{{ growerCategory.id }}"
+         data-parent="#accordion">
+    {% else %}
+    <div id="collapse{{ growerCategory.id }}" class="collapse" aria-labelledby="heading{{ growerCategory.id }}"
+         data-parent="#accordion">
+    {% endif %}
+        <div class="cardBodyGrowerCategory card-body">
+            {% include 'Grower/grower.html.twig' %}
+        </div>
+    </div>
+    {% endfor %}
+</div>

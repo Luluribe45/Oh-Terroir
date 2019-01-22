@@ -1,0 +1,37 @@
+<div class="row contact_details mt-3 mx-1 ">
+    <div class="col-lg-4 align-self-center text-center">
+        <address class="">
+            {{ contact.address }}<br/>
+            {{ contact.zipcode }} {{ contact.city }}<br/>
+            <a href="tel:{{ contact.phonenumber }}">{{ contact.getPhoneNumberFormated }}</a>
+        </address>
+    </div>
+    <div class="col-lg-4 align-self-center">
+        <img class="img-fluid" src="/assets/images/label_AB.jpg" alt="label bio">
+    </div>
+    <div class="col-lg-4 align-self-center">
+        {% for i in 0..schedules|length - 1 %}
+            <div class="row">
+                <div class="col">
+                    {{ schedules[i].day }}
+                </div>
+                <div class="col">
+                    {% if schedules[i].timeSlot1 == '00:00 - 00:00' %}
+                        Fermé
+                    {% else %}
+                        {{ schedules[i].timeSlot1 }}
+                        {{ schedules[i].timeSlot2 }}
+                    {% endif %}
+                </div>
+
+            </div>
+            {% if loop.last == false %}
+                <div class="row">
+                    <div class="col">
+                        <p class="mx-auto my-1 " style="border-bottom: 1px dotted #FFF;width: 20%;"></p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

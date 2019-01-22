@@ -1,0 +1,102 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}
+    Modification des coordonnées - {{ parent() }}
+{%  endblock %}
+
+{%  block page_title %}
+    Modification des Coordonnées
+{%  endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-5 col-sm-12 mx-auto mb-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Oh Terroir</h5>
+                <p class="card-text">{{ contactDetails.address }}<br/>
+                    {{ contactDetails.zipCode ~ ' ' ~ contactDetails.city }}<br/>
+                    Tél. {{ contactDetails.phoneNumber }}<br/>
+                    Email. {{ contactDetails.emailAddress }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-sm-12 border pr-lg-2 mx-auto">
+        <form action="/admin/contact-details/edit/{{ contactDetails.id }}" method="post">
+            <input type="hidden" name="id" value="{{ contactDetails.id }}" />
+            <fieldset>
+                <legend>Modifier les coordonnées</legend>
+
+                {% if errors.global is defined  %}
+                    <div class="form-group">
+                        <div class="col-12 text-center alert alert-danger" role="alert">
+                            {{ errors.global }}
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if validateForm is not empty  %}
+                    <div class="form-group">
+                        <div class="col-12 text-center alert alert-success" role="alert">
+                            {{ validateForm }}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="form-group row">
+                    <label for="address" class="col-sm-3 col-form-label">Adresse</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="address" name="address" value="{{ cleanPost.address ?? contactDetails.address }}" maxlength="255" placeholder="ex: 1 rue de Jeanne D'arc">
+                        {% if errors.address is defined %}
+                            <p class="text-danger my-0" >{{ errors.address }}</p>
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="zipcode" class="col-sm-3 col-form-label">Code postal</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="zipcode" name="zipcode" value="{{ cleanPost.zipcode ?? contactDetails.zipCode }}" maxlength="5" placeholder="ex: 45000">
+                        {% if errors.zipcode is defined %}
+                            <p class="text-danger my-0" >{{ errors.zipcode }}</p>
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="city" class="col-sm-3 col-form-label">Ville</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="city" name="city" value="{{ cleanPost.city ?? contactDetails.city }}" maxlength="80" placeholder="ex: Orléans">
+                        {% if errors.city is defined %}
+                            <p class="text-danger my-0" >{{ errors.city }}</p>
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="phonenumber" class="col-sm-3 col-form-label">Téléphone</label>
+                    <div class="col-sm-9">
+                        <input type="tel" id="phonenumber" name="phonenumber" value="{{ cleanPost.phonenumber ?? contactDetails.phoneNumber }}" maxlength="10" placeholder="ex: 0238252525">
+                        {% if errors.phonenumber is defined %}
+                            <p class="text-danger my-0" >{{ errors.phonenumber }}</p>
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label">Adresse email</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" name="email" value="{{ cleanPost.email ?? contactDetails.emailAddress }}" maxlength="255" placeholder="ex: contact@wanadoo.fr">
+                        {% if errors.email is defined %}
+                            <p class="text-danger my-0" >{{ errors.email }}</p>
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-dark">Sauvegarder</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}

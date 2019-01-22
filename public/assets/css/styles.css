@@ -1,0 +1,451 @@
+body {
+    font-family: "PT Serif", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-image:url(../images/low_contrast_linen_@2X.png);
+    padding-top: calc(1vh + 48pt);
+}
+
+section header {
+    margin-bottom: 50px;
+}
+
+.logo{
+    width: 150px;
+}
+
+nav.navbar {
+    font-family: "PT Serif", serif;
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    padding-top: 0;
+    padding-bottom: 0;
+    background: #222222;
+}
+
+nav.navbar .nav-link {
+    color: #FFFFFF;
+    letter-spacing: 0.08rem;
+    font-size: 1.2rem;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 2px solid transparent;
+}
+
+nav.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+nav.navbar .nav-link:hover {
+    color: #7fb401;
+    border-color: #7fb401;
+}
+
+nav.navbar .nav-link.active {
+    color: #7fb401;
+    border-color: #7fb401;
+}
+
+nav.navbar .navbar-toggler {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+nav.navbar .navbar-btn.btn-unique, nav.navbar .navbar-btn.btn-unique-reverse, nav.navbar .navbar-btn.btn-unique-white {
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+nav.navbar.shrink .nav-link {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+@media (max-width: 991.98px) {
+    nav.navbar {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    nav.navbar .nav-link {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        border: none;
+    }
+
+}
+
+/* Carousel */
+.slideShow {
+    box-shadow: 10px 10px 20px #1C1C1C;
+    margin-bottom: 1em;
+}
+
+.carousel-item img {
+    max-height: 50vh;
+}
+
+/* sentence_concept Section */
+h1 {
+    font-family: "Dancing Script", cursive !important;
+    font-size: calc(1.2vw + 18pt);
+}
+
+div.container.bg {
+    padding-top: 3vh;
+    margin-bottom: 1.5vh;
+    background-color: white;
+    box-shadow: 1px 1px 200px black;
+    background-image:url(../images/paper.png);
+}
+
+/* special_offers section */
+
+.special_offers .card {
+    background-color: transparent;
+    border: none;
+}
+.special_offers .card-header, .special_offers .card-footer {
+    border: 1px solid #7fb401;
+    background-color: rgba(127,180,1,0.6);
+}
+.special_offers .card-body {
+    border-right: 1px solid #7fb401;
+    border-left: 1px solid #7fb401;
+    padding: 0.5rem;
+    background-color: #FFF;
+}
+.special_offers .card-footer {
+    font-size: 10pt;
+}
+
+.special_offers p {
+    font-size: 1.2em;
+}
+
+/* back-end */
+.container-admin {
+    background-color: #FFF;
+}
+
+/* dishes section */
+.dishes_concept, .grower_concept {
+    font-size: calc(0.50vw + 11pt);
+    line-height: 1.5;
+}
+
+.concept_food {
+    padding-bottom: 1em;
+}
+
+.concept {
+    color: #7fb401;
+    font-weight: bold;
+}
+
+hr {border:1px dashed #7fb401;width:50%;}
+
+/* Banner grower */
+.banner-grower {
+    background-image: url("../images/produits-bio-produits-locaux.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+.banner-grower p {
+    font-size: calc(0.3vw + 13pt);
+    width:50%;
+    background-image:url("../images/paper.png");
+    transform: skewX(-15deg);
+}
+
+@media (max-width: 760px) {
+    .banner-grower {
+        padding-bottom: calc(1vh + 30%);
+    }
+
+    .banner-grower > p {
+        transform: skewX(0deg);
+        width: 100%;
+    }
+}
+
+/* form grower */
+form legend {
+    font-size: inherit;
+    font-weight: 600;
+}
+
+/* carousel TripAdvisor*/
+.slideOpinionsTripAdvisor h3 {
+    font-size: calc(0.3vw + 15pt);
+
+}
+.slideOpinionsTripAdvisor .carousel-inner .carousel-item .comment {
+    font-size:calc(0.3vw + 13pt);
+    width: 80%;
+    margin: auto;
+}
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%7fb401' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%7fb401' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+/* contact_details section */
+.contact_details{
+    background-color: #7fb401;
+    background-image: url("../images/60-lines.png");
+    color: #ffffff;
+    padding-top: 0.5em;
+    box-shadow: 5px 5px 5px 0px rgba(51,51,51,0.4);
+    font-size: 1.2em;
+}
+
+.contact_details address {
+    margin:auto;
+    margin-bottom: 0;
+}
+.contact_details address a {
+    color:#FFF;
+}
+.contact_details img {
+    box-shadow: 5px 5px 5px 0px rgba(51,51,51,0.4);
+}
+
+.contact_details .col-lg-4{
+    padding-bottom: 0.5em;
+}
+
+/* categories Home */
+.category-home {
+    margin: auto;
+    position: relative;
+    padding:0;
+    width: 210px;
+    height: 210px;
+    border: 1px double #7fb401;
+}
+
+.category-home p {margin:0;display: table;}
+
+.category-home .name {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width:100%;
+    height:100%;
+    text-align: center;
+    font-size: calc(1.5vh + 13pt);
+    letter-spacing: 3px;
+    background-color: rgba(255,255,255,0.6);
+    color: #000;
+    text-shadow: 1px 1px #999999;
+}
+
+.category-home .name:hover {
+    background-color: rgba(255,255,255,0);
+    text-decoration: underline;
+    text-shadow: none;
+}
+
+.category-home .name:hover span {display: none;}
+
+.category-home-global {
+    font-size : 1.2em;
+}
+.category-home-global span {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: calc(1.0vw + 16pt);
+}
+
+/* footer */
+footer h3{
+    font-family: "Dancing Script", cursive;
+    color: #7fb401;
+    padding-top: 0.9375rem;
+    margin-bottom: 1.25rem;
+    padding-left: 2rem;
+    font-size: calc(1.5vw + 20pt);
+}
+
+footer h4{
+    font-family: "Dancing Script", cursive;
+    color: #7fb401;
+    font-size: calc(1.5vw + 20pt);
+}
+
+footer img {
+    height: 25rem;
+    width: 37.5rem;
+    margin-right: 1rem;
+    padding-left: 2rem;
+}
+
+footer {
+    background-color: #222222;
+}
+
+footer li{
+    list-style-type: none;
+}
+
+footer #pages a {
+    font-family: "PT Serif", serif;
+    font-size: 1.5625rem;
+    color: #fff;
+}
+
+footer #pages a:after {
+    content: '';
+    display: block;
+    width: 3.125rem;
+    height: 0.125rem;
+    background: #7fb401;
+    margin-bottom: 0.9375rem;
+}
+
+footer #pages a:hover {
+    text-decoration: none;
+    color: #7fb401;
+}
+
+footer #coordonnees {
+    font-family: "PT Serif", serif;
+    color: white;
+    font-size: 1.25rem;
+}
+footer address a {
+    color: white;
+}
+footer address a:hover {
+    color: #7fb401;
+}
+footer .fab {
+    margin-right: 4rem;
+    color: white;
+}
+
+footer .fab:hover {
+    color: #7fb401;
+}
+
+@media screen and (max-width: 375px)
+{
+    footer #pages {
+        display: none;
+    }
+
+    footer h4 {
+        padding-left: 2rem;
+    }
+
+    footer .btn {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Grower Page*/
+.btn-link:hover {
+    color: #7fb401;
+    text-decoration: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn-link {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.cardBodyGrowerCategory{
+    background-color: rgba(127, 180, 1, 0.25) ;
+}
+
+.growerPicture {
+    height: 80px;
+    width: 80px;
+}
+
+.growerCard {
+    padding: 1%;
+    margin-bottom: 0.5%;
+}
+.growerCard .btn {
+    white-space: normal;
+}
+.btnGrower{
+    margin-bottom: 2%;
+}
+
+.card {
+    height: 100%;
+}
+
+.cardTitleGrower {
+    text-align: center;
+    padding-top: 0.75%;
+}
+
+/* Admin_catégories plats*/
+.button_dishCategory {
+    color : white;
+}
+.button_dishCategory_add {
+    margin-bottom: 5vh;
+}
+.button_dishCategory:hover {
+    color : #7fb401;
+    text-decoration: none;
+}
+.dishCategory {
+    margin-top: 1vh;
+}
+@media (max-width: 768px) {
+    .col_dish {
+        margin-bottom: 3vh;
+    }
+}
+
+/* section dishes menu*/
+.accordion img {
+    border: 10px solid white;
+}
+
+.plus-minus-button > button:before {
+    content:url("../images/minus_sign-circle.png");
+    padding-right: 5px;
+}
+.plus-minus-button > button.collapsed:before {
+    content:url("../images/plus_sign-circle.png");
+}
+
+.dishes-list {
+    background-color: rgba(127, 180, 1, 0.25); /*#7fb401;*/
+    font-size: 1.1em;
+}
+
+.drinks_sentence {
+    font-size: 1.1em;
+}

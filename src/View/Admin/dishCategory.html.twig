@@ -1,0 +1,34 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}
+    Catégories de plats - {{ parent() }}
+{% endblock %}
+
+{%  block page_title %}
+    Catégories de plats
+{%  endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <form method="GET" action="/admin/categorie-plats/ajouter">
+                <button class="btn btn-dark btn-lg mx-auto d-block button_dishCategory button_dishCategory_add">Ajouter</button>
+            </form>
+        </div>
+    </div>
+    {% for dishCategory in dishCategories %}
+        <div class="row dishCategory">
+            <div class="col-sm-6 offset-1">
+                {{ dishCategory.namePageHome }}
+            </div>
+            <div class="col-sm-2 col_dish">
+                <a class="btn btn-dark mx-auto d-block button_dishCategory" href="/admin/categorie-plats/edit/{{ dishCategory.id }}" role="button">Modifier</a>
+            </div>
+            <div class="col-sm-3 col_dish">
+                <form method="GET" action="">
+                    <button type="button" class="btn btn-dark mx-auto d-block button_dishCategory">Supprimer</button>
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

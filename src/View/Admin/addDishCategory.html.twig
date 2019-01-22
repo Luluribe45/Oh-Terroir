@@ -1,0 +1,50 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}
+    Ajout de catégories de plats - {{ parent() }}
+{% endblock %}
+
+{%  block page_title %}
+    Ajout de catégories de plats
+{%  endblock %}
+
+{% block content %}
+<div class="row dishCategory">
+    <div class="col-lg-6 col-sm-12 border pr-lg-2 mx-auto">
+        <form action="/admin/categorie-plats/ajouter" method="post">
+            <fieldset>
+                <legend>Ajouter des catégories de plats</legend>
+                <div class="form-group row">
+                    <label for="namePageHome" class="col-sm-3 col-form-label">Titre</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="{{ dishCategory.namePageHome }}" name="namePageHome" placeholder="" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="namePageDish" class="col-sm-3 col-form-label">Nom du plat</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="{{ dishCategory.namePageDish }}" name="namePageDish" placeholder="" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="description" class="col-sm-3 col-form-label">Description</label>
+                    <div class="col-sm-9">
+                        <textarea name="description" rows="5" cols="20">{{ dishCategory.description }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="complementaryInformation" class="col-sm-3 col-form-label">Informations complémentaires</label>
+                    <div class="col-sm-9">
+                        <textarea name="complementaryInformation" rows="5" cols="20">{{ dishCategory.complementaryInformation }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-dark" value="Valider">Ajouter</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}

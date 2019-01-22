@@ -1,0 +1,32 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}
+    Gérer les coordonnées - {{ parent() }}
+{%  endblock %}
+
+{%  block page_title %}
+    Gérer les Coordonnées
+{%  endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-5 col-sm-12 mx-auto mb-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Oh Terroir</h5>
+                <p class="card-text">
+                <address>
+                    {{ contactDetails.address }}<br/>
+                    {{ contactDetails.zipCode ~ ' ' ~ contactDetails.city }}<br/>
+                    Tél. {{ contactDetails.phoneNumber }}<br/>
+                    Email. {{ contactDetails.emailAddress }}
+                </address>
+                </p>
+                <form method="GET" action="/admin/contact-details/edit/{{ contactDetails.id }}">
+                    <button class="btn btn-dark">Modifier</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

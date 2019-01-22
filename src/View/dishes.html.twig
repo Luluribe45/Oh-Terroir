@@ -1,0 +1,61 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_title%}Nos plats et desserts{% endblock %}
+
+{% block content %}
+    <p class="dishes_concept text-center">Notre philosophie inspirée du mouvement <span class="concept">Slow Food</span>,</p>
+    <p class="dishes_concept concept_food text-center"><span class="concept">BON </span>(goûteux), <span class="concept">PROPRE </span>(soucieux de l’environnement) et <span class="concept">JUSTE </span>(respect du producteur).</p>
+    {% for dishCategory in dishCategories %}
+        <div class="accordion" id="accordion">
+            <div class="card bg-light" id="{{ dishCategory.id }}">
+                <div class="card-header" id="heading{{ dishCategory.id }}" aria-multiselectable="true">
+                    <div class="row d-flex align-items-center ml-0">
+                        <div class="col-sm-5 dish_name-description">
+                            <h2>{{ dishCategory.namePageDish }}</h2>
+                            <p class="mt-4">{{ dishCategory.description }}</p>
+                            <p class="my-5 text-center font-weight-bold">
+                                A partir de <span class="concept"><big>{{ dishCategory.minPrice|number_format(2, '.', ',') }}&euro;</big></span>
+                            </p>
+                        </div>
+                        <div class="col-sm-7">
+                            <img class="img-fluid" src="{{ dishCategory.urlPictureForPageDish }}" alt="">
+                        </div>
+                    </div>
+                    <div class="row mt-2 plus-minus-button float-right">
+                        <button class="collapsed btn btn-link" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{ dishCategory.id }}" aria-expanded="false" aria-controls="collapse{{ dishCategory.id }}"></button>
+                    </div>
+                </div>
+            <div id="collapse{{ dishCategory.id }}" class="collapse dishes-list" aria-labelledby="heading{{ dishCategory.id }}" data-parent="#accordion">
+                <div class="card-body">
+                        {% for dish in dishes %}
+                            {% if dish.dishCategoryId == dishCategory.id %}
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p><big>{{ dish.name }}</big></p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <span class="dish_price">{{ dish.price|number_format(2, '.', ',') }}&euro;</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col pb-3">
+                                    <p>{{ dish.composition }}</p>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    <div class="row ml-0 pt-3">
+                        <p>{{ dishCategory.complementaryInformation }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="row text-center">
+        <div class="col my-5 drinks_sentence">
+            <p>Les boissons comprises dans nos menus sont à volonté.</p>
+            <p>Une centrale d'affinage est utilisée pour notre eau, les sirops bio sont fabriqués par la maison Meneau.</p>
+        </div>
+    </div>
+{% endblock %}

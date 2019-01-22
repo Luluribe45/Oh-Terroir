@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_title %}
+    <!-- sentence_concept Section-->
+
+    Nos Producteurs
+    <!-- End sentence_concept Section-->
+{% endblock %}
+
+{% block content %}
+    <p class="grower_concept text-center">Nos producteurs sont <span class="concept">LOCAUX</span> (dans la région),<br/>
+        <span class="concept">RESPECTÉS </span> (sans intermédiaire), et <span
+                class="concept"> BIO </span> (si indiqué) .</p>
+    {% include 'Grower/growerCategories.html.twig' %}
+    {% include 'Grower/formContact.html.twig' %}
+{% endblock %}

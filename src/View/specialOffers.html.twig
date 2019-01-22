@@ -1,0 +1,31 @@
+<div class="row special_offers my-5">
+    <div class="card-group">
+    {% for specialoffer in specialoffers %}
+        <div class="card col-md-4 mx-auto">
+            <div class="card-header">
+                <h5 class="my-0">{{ specialoffer.name }}</h5>
+            </div>
+            <div class="card-body">
+                <div class="media">
+                    <img class="align-self-center mr-3" src="{{ specialoffer.imglink }}" alt="" >
+                    <div class="media-body">
+                        <p>{{ specialoffer.description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                {% if (specialoffer.startdate is not null) and (specialoffer.finishdate is not null) %}
+                    <p class="my-0">Valable du : {{ specialoffer.startdate|date('d/m/Y') }} au {{ specialoffer.finishdate|date('d/m/Y') }}</p>
+                {% else %}
+                    <p class="my-0">Offre permanente</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+ </div>
+<div class="row">
+    <div class="col">
+        <hr>
+    </div>
+</div>

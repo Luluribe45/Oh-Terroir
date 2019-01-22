@@ -1,0 +1,23 @@
+<div class="row mt-5">
+    <div class="col">
+        <h2 class="text-center">Pains, Burgers, Salades, Pâtes<br/>et encore plus à découvrir dans notre restaurant</h2>
+    </div>
+</div>
+<div class="row mx-lg-3 mx-lg-5 mt-5 mb-3">
+    {% for dishCategory in dishCategories %}
+        <div class="col-lg-3 col-md-4">
+            <div class="category-home">
+                <p><a href="dishes#heading{{ dishCategory.id }}" class="name" ><span>{{ dishCategory.namePageHome }}</span></a></p>
+                <p><img src="{{ dishCategory.urlPictureForPageHome }}" alt="" class="img-thumbnail img-fluid" ></p>
+            </div>
+            <p class="category-home-global my-4 text-center">
+                A partir de <span class="concept">{{ dishCategory.minPrice|number_format(2, '.', ',') }}&euro;</span>
+            </p>
+        </div>
+    {% endfor %}
+</div>
+<div class="row">
+    <div class="col">
+        <hr>
+    </div>
+</div>

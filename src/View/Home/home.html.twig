@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block page_title %}
+    <!-- sentence_concept Section-->
+
+    Produits Bio, Produits locaux, sur place ou à emporter.
+
+    <!-- End sentence_concept Section-->
+{% endblock %}
+
+{% block slide %}
+    {% include 'slideShow.html.twig' %}
+{% endblock %}
+
+{% block content %}
+     {% include 'ContactsDetails.html.twig' %}
+     {% include 'Home/categoriesHomeShow.html.twig' %}
+     {% include 'specialOffers.html.twig' %}
+     {% include 'Home/tripAdvisor.html.twig' %}
+     {% include 'Home/bannerGrower.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html.twig' %}
+{% endblock %}

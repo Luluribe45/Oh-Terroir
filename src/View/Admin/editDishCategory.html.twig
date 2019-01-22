@@ -1,0 +1,66 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}
+    Modification Catégories de plats - {{ parent() }}
+{% endblock %}
+
+{% block page_title %}
+    Modification de Catégories de plats
+{% endblock %}
+
+{% block content %}
+
+    <div class="row dishCategory">
+        <div class="col-lg-6 col-sm-12 border pr-lg-2 mx-auto">
+            <form action="/admin/categorie-plats/edit/{{ dishCategory.id }}" method="post">
+                <input type="hidden" name="id" value="{{ dishCategory.id }}"/>
+                <fieldset>
+                    <legend>Modifier une catégorie de plats</legend>
+                    <div class="form-group row">
+                        <label for="namePageHome" class="col-sm-3 col-form-label">Titre</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="{{ dishCategory.namePageHome }}" name="namePageHome"
+                                   placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="namePageDish" class="col-sm-3 col-form-label">Nom du plat</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="{{ dishCategory.namePageDish }}" name="namePageDish"
+                                   placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="description" class="col-sm-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <textarea name="description" rows="5" cols="20">{{ dishCategory.description }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="complementaryInformation" class="col-sm-3 col-form-label">Informations
+                            complémentaires</label>
+                        <div class="col-sm-9">
+                            <textarea name="complementaryInformation" rows="5" cols="20">
+                                {{ dishCategory.complementaryInformation }}
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="active" class="col-sm-3 col-form-label">Activée</label>
+                        <div class="col-sm-9">
+                            <input type="radio" name="activeCategory" id="active" value="1"
+                                    {% if dishCategory.isActive == 1 %} checked="checked" {% endif %} /> Oui
+                            <input type="radio" name="activeCategory" id="active" value="0"
+                                    {% if dishCategory.isActive == 0 %} checked="checked" {% endif %} /> Non
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-dark" value="Modifier">Modifier</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}
